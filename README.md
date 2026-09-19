@@ -71,16 +71,6 @@ HUDs-for-BetterHUD/
 
 Tip: Bundle must be built with same Unity version as CarX (check `BetterHUD/README.md`).
 
----
-
-## 🤝 How to contribute
-
-1. Fork this repo.
-2. Dodaj swój HUD file do root (`MyHUD`).
-3. Dodaj wiersz do tabeli `Available HUDs` w `README.md` + preview `preview-myhud.jpg`.
-4. PR → po merge HUD pojawi się w grze wszystkim użytkownikom BetterHUD (auto-fetch z `api.github.com/repos/dovahkiinv/HUDs-for-BetterHUD/contents`).
-
-Rules: no `.md` / `.txt` in file list — only bundles. Max size ~5 MB per HUD.
 
 ---
 
