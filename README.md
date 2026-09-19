@@ -25,7 +25,7 @@ Files are raw AssetBundles (no extension or `.bundle`) — BetterHUD loads both.
 ### In-game (recommended)
 
 1. Launch the game → F6 - Mod DB - `BetterHUD` - Click install and go to menu - so back.
-2. `KSL → BetterHUD` (KSL v1.0.11). 
+2. `KSL → BetterHUD`. 
 2. Click `▶ Custom HUDs` — you will enter the folder just like `About` (`◀ Back` to return).
 4. At the bottom, click `🔴 Download HUDs` (red). The first visit automatically runs `Fetching from GitHub...`.
 5. Select a HUD:
