@@ -1,6 +1,6 @@
 # HUDs for BetterHUD
 
-> **Custom HUDs for [BetterHUD](https://github.com/dovahkiinv/BetterHUD) — CarX Drift Racing Online (KSL / Kino)**
+> **Custom HUDs for [BetterHUD](https://github.com/dovahkiinv/MultiHUD) — CarX Drift Racing Online (KSL / Kino)**
 
 Download and install HUDs with one click directly in-game: `BetterHUD → ▶ Custom HUDs → 🔴 Download HUDs` — or manually drop `.bundle` files into the folder.
 
@@ -22,11 +22,11 @@ Files are raw AssetBundles (no extension or `.bundle`) — BetterHUD loads both.
 
 ## ⬇️ Installation
 
-### Option A — In-game (recommended)
+### In-game (recommended)
 
-1. Install [BetterHUD](https://github.com/dovahkiinv/BetterHUD) (`Kino/Mods/BetterHUD.dll` + `Kino/Mods/BetterHUD_HUDs/`).
-2. Launch the game → `KSL → BetterHUD` (KSL v1.0.11).
-3. Click `▶ Custom HUDs` — you will enter the folder just like `About` (`◀ Back` to return).
+1. Launch the game → F6 - Mod DB - `BetterHUD` - Click install and go to menu - so back.
+2. `KSL → BetterHUD` (KSL v1.0.11). 
+2. Click `▶ Custom HUDs` — you will enter the folder just like `About` (`◀ Back` to return).
 4. At the bottom, click `🔴 Download HUDs` (red). The first visit automatically runs `Fetching from GitHub...`.
 5. Select a HUD:
    - `[DOWNLOAD] FH4` — not downloaded, click to download to `Kino/Mods/BetterHUD_HUDs/`
