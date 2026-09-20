@@ -1,49 +1,34 @@
-# HUDs for BetterHUD
+# HUDs — External Bundles for MultiHUD
 
-> **Custom HUDs for [BetterHUD](https://github.com/dovahkiinv/MultiHUD) — CarX Drift Racing Online (KSL / Kino)**
+This folder contains **all HUDs** for MultiHUD. The core mod (`MultiHUD.dll`) embeds **no HUD** — every HUD is loaded from disk as a Custom HUD.
 
-Download and install HUDs with one click directly in-game: `BetterHUD → ▶ Custom HUDs → 🔴 Download HUDs` — or manually drop `.bundle` files into the folder.
+- **Source:** Built with Unity 2023.2.22f1, `BuildPipeline.BuildAssetBundles`, scripts in `MultiHUD` namespace (`MultiHUD` assembly).
+- **Files:** `FH4HUD` (74 KB), `NFSU2` (198 KB), `cmrt` (411 KB), `NFS2015`, `InitialD66`, `NFSU2Poland`, `Two_Faded`, `WM3`, `granturismo` — each is a `UnityFS` AssetBundle (no extension by default, `.bundle` also accepted).
 
----
+## How to use
 
-## 📦 Available HUDs
+1. Download one or many HUDs:
+   - **Via git:** `git clone https://github.com/dovahkiinv/MultiHUD.git` → copy from `HUDs/` 
+   - **Via Releases:** download `HUDs.zip` or individual `*.bundle` assets from the latest Release.
+2. Copy the files into:
+   - `CarX Drift Racing Online/Kino/Mods/MultiHUD_HUDs/` (next to `MultiHUD.dll`, created automatically) — also `..._Data/MultiHUD_HUDs` works (auto-detected).
+3. In-game: `Kino → MultiHUD → ▼ Import HUD from Disk` → **Open Folder** → drop files → they appear instantly as **Custom HUDs** (auto-refresh every 1.5s, no restart). Click `[OFF] FH4` → `[ON] FH4`.
 
-| HUD | File | Preview | Size | Version | Author |
-|-----|------|---------|------|---------|--------|
-| **FH4** | `FH4HUD` | Forza Horizon 4 style — clean, minimal, kmh/mph, gear, tachometer | 73 KB | 1.0 | Dova (dovahkiinv) |
-| **CMRT** | `cmrt` | CMRT style — colored dots, turbo arc, dots rpm | 410 KB | 1.0 | Dova |
-| *More coming...* | — | — | — | — | — |
+## Verification with FH4HUD
 
-> Want to add your own HUD? See [How to contribute](#-how-to-contribute).
+`FH4HUD` is the reference external HUD:
+- Prefab name inside bundle: `FH4`
+- Size: 74 KB, contains `MultiHUD.Speedo`, `Tacho`, `Gear` etc.
+- Tested: Drop `FH4HUD` into `MultiHUD_HUDs` → Refresh → Enable `FH4` → works identically to the former embedded version (same code path, just `AssetBundle.LoadFromFile` instead of `LoadFromStream`).
 
-Files are raw AssetBundles (no extension or `.bundle`) — BetterHUD loads both.
+## For authors
 
----
+To add your own:
+```bash
+python Add_HUD.py MyHUD
+# build bundle as `MyHUD` (no extension) in Unity
+cp MyHUD HUDs/MyHUD
+git add HUDs/MyHUD
+```
 
-## ⬇️ Installation
-
-### In-game (recommended)
-
-1. Launch the game → F6 - Mod DB - `BetterHUD` - Click install and go to menu - so back.
-2. `KSL → BetterHUD`. 
-2. Click `▶ Custom HUDs` — you will enter the folder just like `About` (`◀ Back` to return).
-4. At the bottom, click `🔴 Download HUDs` (red). The first visit automatically runs `Fetching from GitHub...`.
-5. Select a HUD:
-   - `[DOWNLOAD] FH4` — not downloaded, click to download to `Kino/Mods/BetterHUD_HUDs/`
-   - `[INSTALLED] FH4` — already downloaded, button inactive
-   - `[UPDATE] FH4 - update awaiting` — a newer version is available on GitHub (`sha` has changed), click to overwrite the file
-6. Go back via `◀ Back` → in `Custom HUDs` you will see `[OFF] FH4` — click `[ON]`, then `▶ Positioning` to adjust `X / Y / Scale`.
-
-Updates are detected via GitHub `sha` (or file size fallback) — if already installed, `cannot click unless update`.
-
-### Option B — Manual
-
-1. Download the file from this repository (`FH4HUD`, `cmrt` — **Raw** → `Save as`).
-2. Place it into `CarX Drift Racing Online/Kino/Mods/BetterHUD_HUDs/` (or `..._Data/BetterHUD_HUDs` — the one opened by `Open Folder`, currently available only in the older version of BetterHUD).
-3. In-game, `Custom HUDs` refreshes automatically every `1.5s` — you will see the new HUD on the list.
-
----
-
-## 🖼️ Previews
-
-> Replace with your own screenshots / GIFs `preview-fh4.jpg`, `preview-cmrt.jpg`.
+Custom HUDs (any filename not matching the built-in enum) appear under **Custom imported** in the Import section and are stored as `CUSTOM_<name>_X/Y/S` in `MultiHUD_config.txt`.
